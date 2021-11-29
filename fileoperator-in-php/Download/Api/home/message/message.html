@@ -1,0 +1,72 @@
+<button id="rep" type="button" style="display: none;"  data-toggle="modal" data-target="#Reply" style="float: right; "class="btn btn-info  fa fa-plus">Add image Gallery</button>
+<table id="dtBasicExample" class="table align-middle table table-striped table-bordered table-sm">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Subject</th>
+      <th scope="col">Username</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody id="body">
+   
+  </tbody>
+</table>
+<script src="message/message.js"></script>
+
+<div class="modal fade" id="Reply" tabindex="-1" role="dialog" aria-labelledby="Reply" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <button id="dismis" type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+<form>
+ 
+
+  <div class="row">
+    <div class="col">
+      <label style="color: blue;">User</label>
+         <p style="color: brown;" id="User"></p>
+         <input type="hidden" id="xI">
+        
+      </div>
+   
+    <div class="col">
+    <label style="color: blue;">Message</label>
+       <p id="Message"></p>
+       <button type="button" id="Show" class="btn btn-info">Reply to user</button>
+    </div>
+  </div>
+
+  <div  id="textArea" style="display: none;" class="form-group">
+    <label for="exampleFormControlTextarea1">Reply Message</label>
+    <textarea style="width:100%;" id="description" class="form-control" placeholder="Reply Here"  rows="3"></textarea>
+    <button type="button" class="btn btn-success" id="reply">Reply</button>
+  </div>
+</form>
+      </div>
+      <div id="footer" class="modal-footer">
+        <button type="button" id="close" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $('#close').click(()=>{
+      $('#textArea').css("display","none");
+  })
+  $('#dismis').click(()=>{
+      $('#textArea').css("display","none");
+  })
+  $('#Show').click(()=>{
+      $('#textArea').css("display","block");
+  })
+</script>

@@ -1,0 +1,155 @@
+<style>
+    .container {
+      position: relative;
+      
+    }
+    
+    .image {
+      opacity: 1;
+      display: block;
+      width: 100%;
+      height: auto;
+      transition: .5s ease;
+      backface-visibility: hidden;
+    }
+    
+    .middle {
+      transition: .5s ease;
+      opacity: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      text-align: center;
+      
+    }
+    
+    .container:hover .image {
+      opacity: 0.3;
+    }
+    
+    .container:hover .middle {
+      opacity: 1;
+      display: flex;
+      flex-direction: row;
+    }
+    
+    .text {
+      background-color: #044;
+      color: white;
+      font-size: 16px;
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+      align-items: center;
+      margin-right: 6px;
+      cursor: pointer;
+    }
+
+    .text >.fa-trash,.fa-pencil-square-o{
+        margin-top: 15px;
+        font-size: 20px;
+    }
+    </style>
+
+<!-- Gallery -->
+<button id="AddGalleryy"  data-toggle="modal" data-target="#AddGallery" style="float: right; "class="btn btn-info  fa fa-plus">Add image Gallery</button>
+<div class="row">
+    
+    <div  id="1" class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+     
+       
+    </div>
+  
+    <div id="2" class="col-lg-4 mb-4 mb-lg-0">
+    
+    </div>
+  
+    <div id="3" class="col-lg-4 mb-4 mb-lg-0">
+     
+  </div>
+
+
+
+
+
+  <div class="modal fade" id="AddGallery" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"></h5>
+          <button id="dismis" type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+  <form>
+   
+  
+    <div class="row">
+
+      
+       
+       
+     
+      <div class="col">
+        <label>Title</label>
+        <input id="title" type="text" class="form-control" placeholder="Image theme">
+      <label>Caption</label>
+        <input id="caption" type="file" class="form-control" placeholder="Image">
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Description</label>
+      <textarea style="width:100%;" id="description" class="form-control"  rows="3"></textarea>
+    </div>
+  </form>
+        </div>
+        <div id="footer" class="modal-footer">
+          <button type="button" id="close" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Gallery -->
+  <script>
+    $(document).ready(function(){
+        $("#Edit").remove();
+
+        var btn = document.createElement('button');
+        btn.setAttribute("class","btn btn-primary");
+        btn.setAttribute("id","Save");
+        btn.append("Save");
+        btn.setAttribute('type',"button");
+        $('#footer').append(btn);
+  
+       // })
+      
+
+       
+        document.getElementById('exampleModalLabel').innerHTML="Add Image To Gallery";
+
+        $('#close').click(()=>{
+            $("#Edit").remove();
+            $("#Save").remove();
+            btn.setAttribute('type',"button");
+        $('#footer').append(btn);
+            
+            document.getElementById('exampleModalLabel').innerHTML="Add Image To Gallery";
+        })
+
+        $("#dismis").click(()=>{
+            $("#Edit").remove();
+            $("#Save").remove();
+            btn.setAttribute('type',"button");
+        $('#footer').append(btn);
+            document.getElementById('exampleModalLabel').innerHTML="Add Image To Gallery";
+        })
+        
+        
+    })
+</script>
+  <script src="gallery/gallery.js"></script>

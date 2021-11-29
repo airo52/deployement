@@ -1,0 +1,16 @@
+.freeze { pointer-events: none; }
+
+.hidden { display: none; }
+
+.overlay {
+  position: fixed;
+  z-index: 100;
+  padding: 20px;
+  background: white;
+  border: solid 1px #ccc;
+  width: 300px;
+  top: 20px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}

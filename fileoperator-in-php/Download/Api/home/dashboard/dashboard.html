@@ -1,0 +1,322 @@
+<div class="row">
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card card-stats">
+        <div class="card-body ">
+          <div class="row">
+            <div class="col-5 col-md-4">
+              <div class="icon-big text-center icon-warning">
+                <i class="nc-icon nc-globe text-warning"></i>
+              </div>
+            </div>
+            <div class="col-7 col-md-8">
+              <div class="numbers">
+                <p class="card-category">Reservation</p>
+                <p class="card-title" id="Reservation"><p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer ">
+          <hr>
+          <div class="stats">
+            <i class="fa fa-refresh"></i>
+            Update Now
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card card-stats">
+        <div class="card-body ">
+          <div class="row">
+            <div class="col-5 col-md-4">
+              <div class="icon-big text-center icon-warning">
+                <i class="nc-icon nc-money-coins text-success"></i>
+              </div>
+            </div>
+            <div class="col-7 col-md-8">
+              <div class="numbers">
+                <p class="card-category">Revenue</p>
+                <p class="card-title" id="Revenue"><p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer ">
+          <hr>
+          <div class="stats">
+            <i class="fa fa-calendar-o"></i>
+            Last day
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card card-stats">
+        <div class="card-body ">
+          <div class="row">
+            <div class="col-5 col-md-4">
+              <div class="icon-big text-center icon-warning">
+                <i class="nc-icon nc-vector text-danger"></i>
+              </div>
+            </div>
+            <div class="col-7 col-md-8">
+              <div class="numbers">
+                <p class="card-category">Packages</p>
+                <p class="card-title" id="packages"><p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer ">
+          <hr>
+          <div class="stats">
+            <i class="fa fa-clock-o"></i>
+            In the last hour
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card card-stats">
+        <div class="card-body ">
+          <div class="row">
+            <div class="col-5 col-md-4">
+              <div class="icon-big text-center icon-warning">
+                <i class="nc-icon nc-favourite-28 text-primary"></i>
+              </div>
+            </div>
+            <div class="col-7 col-md-8">
+              <div class="numbers">
+                <p class="card-category">Followers</p>
+                <p class="card-title" id="followers"><p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer ">
+          <hr>
+          <div class="stats">
+            <i class="fa fa-refresh"></i>
+            Update now
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Reservation Request</h4>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table id="dtBasicExample" class="table">
+              <thead class=" text-primary">
+                <th>
+                  Name
+                </th>
+                <th>
+                  reservation
+                </th>
+                <th>
+                  Country
+                </th>
+                <th>
+                  Total Members
+                </th>
+                <th>
+                  Payment Method
+                </th>
+                <th>
+                  Amount paid
+                </th>
+                <th>
+                   Action
+                </th>
+              </thead>
+              <tbody id="tbody">
+              
+              
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+  </div>
+</div>
+<script src="dashboard/dashboard.js"></script>
+
+<div class="modal fade" id="More" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Reservation Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      
+      <div class="modal-body">
+        <form>
+          <div class="row">
+  
+            <div class="col-4">
+               <label><b>Package Name</b></label>
+              
+            </div>
+            <div class="col-2">
+            <label id="pName"></label>
+             
+            </div>
+          </div>
+
+          <div class="row">
+  
+            <div class="col-4">
+               <label><b>UserName</b></label>
+              
+            </div>
+            <div class="col-2">
+            <label id="uName"></label>
+             
+            </div>
+          </div>
+          <div class="row">
+  
+            <div class="col-4">
+               <label><b>Email</b></label>
+              
+            </div>
+            <div class="col-2">
+            <label id="email"></label>
+             
+            </div>
+          </div>
+          <div class="row">
+  
+            <div class="col-4">
+               <label><b>Phone number</b></label>
+              
+            </div>
+            <div class="col-2">
+            <label id="phone"></label>
+             
+            </div>
+          </div>
+          <div class="row">
+  
+            <div class="col-4">
+               <label><b>Country</b></label>
+              
+            </div>
+            <div class="col-2">
+            <label id="country"></label>
+             
+            </div>
+          </div>
+
+          <div class="row">
+  
+            <div class="col-6">
+               <label><b>Package price</b></label>
+              
+            </div>
+            <div class="col-2">
+            <label id="pPrice"></label>
+             
+            </div>
+          </div>
+
+          <div class="row">
+  
+            <div class="col-6">
+               <label><b>Total members expected</b></label>
+              
+            </div>
+            <div class="col-2">
+            <label id="members"></label>
+             
+            </div>
+          </div>
+
+          <div class="row">
+  
+            <div class="col-6">
+               <label><b>Amount Paid</b></label>
+              
+            </div>
+            <div class="col-2">
+            <label id="amount"></label>
+             
+            </div>
+          </div>
+          <div class="row">
+  
+            <div class="col-6">
+               <label><b>Payment Method</b></label>
+              
+            </div>
+            <div class="col-2">
+            <label id="method"></label>
+             
+            </div>
+          </div>
+
+
+          <div class="row">
+  
+            <div class="col-6">
+               <label><b>Reservation Date</b></label>
+              
+            </div>
+            <div class="col-4">
+            <label id="Date"></label>
+             
+            </div>
+          </div>
+
+
+          <div class="row">
+  
+            <div class="col-6">
+               <label><b>Amount</b></label>
+                <input type="text" id="1Amount" placeholder="amount" class="form-control">
+            </div>
+           
+          </div>
+
+          <div class="row">
+  
+            <div class="col-6">
+               <label><b>Payment Method</b></label>
+                 <input type="text" name="" id="1method" placeholder="payment Method" class="form-control">
+            </div>
+           
+          </div>
+
+          <div class="row">
+  
+            <div class="col-6">
+               <label><b>Transaction Id</b></label>
+                <input type="text" name="" id="transactionId" placeholder="Transaction Id" class="form-control">
+            </div>
+           
+          </div>
+
+         
+        </form>
+     
+      </div>
+      <div class="modal-footer" >
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button id="Foot" type="button" class="btn btn-primary">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>

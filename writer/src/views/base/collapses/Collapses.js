@@ -1,0 +1,131 @@
+import React, { useState } from 'react'
+import {
+  CButton,
+  CCard,
+  CCardBody,
+  CCardFooter,
+  CCardHeader,
+  CCol,
+  CCollapse,
+  CFade,
+  CRow 
+} from '@coreui/react';
+import { DocsLink } from 'src/reusable'
+
+const Collapses = () => {
+
+  const [collapse, setCollapse] = useState(false)
+  const [collapseMulti, setCollapseMulti] = useState([false, false])
+  const [accordion, setAccordion] = useState(1)
+  const [fade, setFade] = useState(true)
+
+  const toggle = (e) => {
+    setCollapse(!collapse)
+    e.preventDefault()
+  }
+
+  const toggleMulti = (type) => {
+    let newCollapse = collapseMulti.slice()
+    switch (type) {
+      case "left":
+        newCollapse[0] = !collapseMulti[0];
+        break;
+      case "right":
+        newCollapse[1] = !collapseMulti[1];
+        break;
+      case "both":
+        newCollapse[0] = !collapseMulti[0];
+        newCollapse[1] = !collapseMulti[1];
+        break;
+      default:
+    }
+    setCollapseMulti(newCollapse)
+  }
+
+  const toggleFade = () => {
+    setFade(!fade)
+  }
+
+  return (
+    <CRow>
+      <CCol xl="6">
+        <CCard>
+          <CCardHeader>
+            Collapse
+            <DocsLink name="CCollapse"/>
+          </CCardHeader>
+          <CCollapse show={collapse}>
+            <CCardBody>
+              <p>
+                Anim pariatur cliche reprehenderit,
+                enim eiusmod high life accusamus terry richardson ad squid. Nihil
+                anim keffiyeh helvetica, craft beer labore wes anderson cred
+                nesciunt sapiente ea proident.
+              </p>
+              <p>
+                Donec molestie odio id nisi malesuada, mattis tincidunt velit egestas. Sed non pulvinar risus. Aenean
+                elementum eleifend nunc, pellentesque dapibus arcu hendrerit fringilla. Aliquam in nibh massa. Cras
+                ultricies lorem non enim volutpat, a eleifend urna placerat. Fusce id luctus urna. In sed leo tellus.
+                Mauris tristique leo a nisl feugiat, eget vehicula leo venenatis. Quisque magna metus, luctus quis
+                sollicitudin vel, vehicula nec ipsum. Donec rutrum commodo lacus ut condimentum. Integer vel turpis
+                purus. Etiam vehicula, nulla non fringilla blandit, massa purus faucibus tellus, a luctus enim orci non
+                augue. Aenean ullamcorper nisl urna, non feugiat tortor volutpat in. Vivamus lobortis massa dolor, eget
+                faucibus ipsum varius eget. Pellentesque imperdiet, turpis sed sagittis lobortis, leo elit laoreet arcu,
+                vehicula sagittis elit leo id nisi.
+              </p>
+            </CCardBody>
+          </CCollapse>
+          <CCardFooter>
+            <CButton
+              color="primary"
+              onClick={toggle}
+              className={'mb-1'}
+            >Toggling button</CButton>
+          </CCardFooter>
+        </CCard>
+
+        
+      </CCol>
+      <CCol xl="6">
+      <CCard>
+          <CCardHeader>
+            Collapse
+            <DocsLink name="CCollapse"/>
+          </CCardHeader>
+          <CCollapse show={collapse}>
+            <CCardBody>
+              <p>
+                Anim pariatur cliche reprehenderit,
+                enim eiusmod high life accusamus terry richardson ad squid. Nihil
+                anim keffiyeh helvetica, craft beer labore wes anderson cred
+                nesciunt sapiente ea proident.
+              </p>
+              <p>
+                Donec molestie odio id nisi malesuada, mattis tincidunt velit egestas. Sed non pulvinar risus. Aenean
+                elementum eleifend nunc, pellentesque dapibus arcu hendrerit fringilla. Aliquam in nibh massa. Cras
+                ultricies lorem non enim volutpat, a eleifend urna placerat. Fusce id luctus urna. In sed leo tellus.
+                Mauris tristique leo a nisl feugiat, eget vehicula leo venenatis. Quisque magna metus, luctus quis
+                sollicitudin vel, vehicula nec ipsum. Donec rutrum commodo lacus ut condimentum. Integer vel turpis
+                purus. Etiam vehicula, nulla non fringilla blandit, massa purus faucibus tellus, a luctus enim orci non
+                augue. Aenean ullamcorper nisl urna, non feugiat tortor volutpat in. Vivamus lobortis massa dolor, eget
+                faucibus ipsum varius eget. Pellentesque imperdiet, turpis sed sagittis lobortis, leo elit laoreet arcu,
+                vehicula sagittis elit leo id nisi.
+              </p>
+            </CCardBody>
+          </CCollapse>
+          <CCardFooter>
+            <CButton
+              color="primary"
+              onClick={toggle}
+              className={'mb-1'}
+            >Toggling button</CButton>
+          </CCardFooter>
+        </CCard>
+
+        
+      </CCol>
+    </CRow>
+  )
+}
+
+export default Collapses
